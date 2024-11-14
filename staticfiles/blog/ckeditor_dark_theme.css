@@ -1,0 +1,71 @@
+/* ckeditor_dark_theme.css */
+
+/* Editor Content */
+.cke_editable {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    padding: 10px;
+}
+
+/* Toolbar */
+.cke_top {
+    background-color: #333;
+    border-bottom: 1px solid #555;
+}
+
+.cke_button__bold_icon, .cke_button__italic_icon, .cke_button__underline_icon,
+.cke_button__strike_icon, .cke_button__link_icon, .cke_button__unlink_icon,
+.cke_button__image_icon, .cke_button__bulletedlist_icon, .cke_button__numberedlist_icon,
+.cke_button__justifyleft_icon, .cke_button__justifycenter_icon, .cke_button__justifyright_icon {
+    filter: brightness(0.8); /* Darkens icons slightly */
+}
+
+/* Change button colors */
+.cke_button {
+    color: #f0f0f0;
+}
+
+.cke_button:hover {
+    background-color: #444;
+}
+
+/* Toolbar separators */
+.cke_toolbar_separator {
+    background-color: #555;
+}
+
+/* Drop-downs and other interactive elements */
+.cke_combo_text, .cke_combo_inlinelabel, .cke_path_item {
+    background-color: #444;
+    color: #fff;
+}
+
+.cke_combo_button:hover, .cke_path_item:hover {
+    background-color: #555;
+}
+
+/* Bottom path bar */
+.cke_bottom {
+    background-color: #333 !important;
+    border-top: 1px solid #555 !important;
+    color: #f0f0f0 !important;
+}
+
+/* Element path */
+.cke_path {
+    color: #ccc;
+}
+
+.cke_path_item {
+    color: #aaa;
+}
+
+.cke_path_item:hover {
+    color: #fff;
+}
+
+/* Resizer */
+.cke_resizer {
+    background-color: #333;
+}

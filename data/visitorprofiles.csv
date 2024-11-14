@@ -1,0 +1,2 @@
+session_id,ip_address,utm_source,user_agent,device_type,page_urls,scroll_depth,time_spent,country,region,date_time_visited
+1bjh1i1lke99y6d1m6k3kv8zuz7llz14,127.0.0.1,Web,"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.1 Safari/605.1.15",Desktop,"[""welcome page"", ""blog list page"", ""blog create page"", ""blog list page""]","[""0%"", ""0%"", ""0%"", ""0%""]","[5, 2, 4, 3]",Unknown,Unknown,2024-11-14T02:05:13.696335-05:00

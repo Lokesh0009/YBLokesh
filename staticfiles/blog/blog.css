@@ -1,0 +1,686 @@
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+}
+
+django-ckeditor-widget{
+    width: 100%;
+}
+
+
+.blog-main-container{
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 70%;
+}
+
+.blog-list-container {
+    align-items: flex-start;
+}
+
+.btn-primary {
+    background-color: #2980b9;
+}
+
+.blog-post {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.blog-post h2 {
+    margin-top: 0;
+}
+
+.blog-post p {
+    font-size: 14px;
+    color: #555;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination .step-links {
+    display: inline-block;
+}
+
+.pagination .step-links a,
+.pagination .step-links .current {
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+
+#pdf-container {
+    position: relative;
+    width: 15vh;
+    height: 25vh;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+#pdf-container:hover .pdf-nav-button {
+    display: block;
+}
+
+
+.pdf-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    display: none;
+    z-index: 1000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+#pdf-prev {
+    left: 10px;
+}
+
+#pdf-next {
+    right: 10px;
+}
+
+#pdf-pagination {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.blog-details {
+    width: 100%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2c3e50;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+}
+
+.blog-details h1,
+.blog-details h2,
+.blog-details h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.blog-details p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+
+#pdf-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    border: 1px solid #ddd;
+    margin: 0 auto 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+#pdf-render {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.pdf-nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+.pdf-nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#pdf-prev {
+    left: 10px;
+}
+
+#pdf-next {
+    right: 10px;
+}
+
+
+#pdf-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.download-btn-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.download-btn-container .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.download-btn-container .btn:hover {
+    background-color: #0056b3;
+}
+
+.blog-details ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.blog-details ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-details ul li:last-child {
+    border-bottom: none;
+}
+
+.blog-details form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    overflow: auto;
+}
+
+.blog-details form p {
+    margin-bottom: 15px;
+}
+
+.blog-details form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.blog-details form input,
+.blog-details form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 14px;
+    color: #333;
+}
+
+.blog-details form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #151414;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.blog-details form button:hover {
+    background-color: #218838;
+}
+
+.home-container99 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: black;
+}
+
+.blog-container {
+    flex: 1;
+    overflow: auto;
+    /* margin-top: 10vh; */
+    background-color: black;
+    padding: 20px;
+}
+
+
+.blog-content {
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+
+}
+
+.blog-post-card {
+    display: flex;
+    color: #ecf0f1;
+    width: 1200px; /* Fixed width */
+    height: 400px; /* Fixed height */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out elements */
+    transition: transform 0.3s ease;
+    flex-wrap: wrap;
+}
+
+
+.blog-post-thumbnail {
+    margin: 30px;
+}
+
+
+.blog-post-thumbnail img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.blog-post-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.blog-post-content p {
+    font-size: 1em;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blog-post-content {
+    flex: 1;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #2c3e50;
+    border-radius: 20px;
+    padding: 20px;
+    height: 40%;
+    width: 60%;
+    min-height: 350px;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-header h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.post-header p {
+    margin-bottom: 20px;
+    color: #bdc3c7;
+  
+}
+
+.post-footer{
+    margin-top: auto;
+}
+
+.read-more-btn {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: auto;
+}
+
+.read-more-btn:hover {
+    background-color: #3498db;
+}
+
+
+.post-meta {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #95a5a6;
+}
+
+.post-meta span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.cke_screen_reader_only {
+    display: none !important;
+}
+
+
+.remove-tag {
+    color: red;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-tag:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 1320px) {
+    .blog-details {
+        width: 100%;
+    }
+    .blog-main-container{
+        width: 90%;
+    }
+    .blog-post-card {
+        width: 79%; 
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+}
+
+@media(max-width: 991px) {
+    .blog-details {
+        width: 100%;
+    }
+    .blog-main-container{
+        width: 90%;
+    }
+    .blog-post-card {
+        width: 79%; 
+        height: auto;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+    .blog-post-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .blog-post-thumbnail img {
+        margin: 0 0 10px 0;
+        height: auto;
+    }
+
+    .blog-post-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .blog-details {
+        width: 100%;
+    }
+    .blog-main-container{
+        width: 80%;
+    }
+
+    .blog-post-card {
+        width: 90%; 
+    }
+}
+
+@media (max-width: 479px) {
+    .blog-container {
+        margin-top: 5vh;
+        padding: 10px;
+    }
+
+    .blog-post-content {
+        padding: 10px;
+    }
+
+    .blog-details {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .blog-main-container{
+        width: 90%;
+    }
+    .blog-post-card {
+        width: 100%; 
+        height: auto;
+    }
+}
+
+.blog-list {
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: space-around;
+}
+
+
+
+
+form input[type="text"],
+form textarea,
+form input[type="file"],
+.ck-editor__editable {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+/* Styling specifically for the CKEditor content area */
+.ck-editor__editable {
+    min-height: 200px;
+}
+
+/* Styling for placeholders and focused fields */
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+}
+form input:focus,
+form textarea:focus,
+.ck-editor__editable:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Styling for the submit button */
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Specific styling for custom classes */
+.create-title,
+.create-content,
+.create-author {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.create-image-file,
+.create-pdf-file {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+    form button[type="submit"] {
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ckeditor_dark_theme.css */
+
+/* Editor Content */
+.cke_editable {
+    background-color: #2b2b2b;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    padding: 10px;
+}
+
+/* Toolbar */
+.cke_top {
+    background-color: #333;
+    border-bottom: 1px solid #555;
+}
+
+.cke_button__bold_icon, .cke_button__italic_icon, .cke_button__underline_icon,
+.cke_button__strike_icon, .cke_button__link_icon, .cke_button__unlink_icon,
+.cke_button__image_icon, .cke_button__bulletedlist_icon, .cke_button__numberedlist_icon,
+.cke_button__justifyleft_icon, .cke_button__justifycenter_icon, .cke_button__justifyright_icon {
+    filter: brightness(0.8); /* Darkens icons slightly */
+}
+
+/* Change button colors */
+.cke_button {
+    color: #f0f0f0;
+}
+
+.cke_button:hover {
+    background-color: #444;
+}
+
+/* Toolbar separators */
+.cke_toolbar_separator {
+    background-color: #555;
+}
+
+/* Drop-downs and other interactive elements */
+.cke_combo_text, .cke_combo_inlinelabel, .cke_path_item {
+    background-color: #444;
+    color: #fff;
+}
+
+.cke_combo_button:hover, .cke_path_item:hover {
+    background-color: #555;
+}
+
+/* Bottom path bar */
+.cke_bottom {
+    background-color: #333;
+    border-top: 1px solid #555;
+    color: #f0f0f0;
+}
+
+/* Element path */
+.cke_path {
+    color: #ccc;
+}
+
+.cke_path_item {
+    color: #aaa;
+}
+
+.cke_path_item:hover {
+    color: #fff;
+}
+
+/* Resizer */
+.cke_resizer {
+    background-color: #333;
+}

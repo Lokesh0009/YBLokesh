@@ -1,0 +1,765 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Y.B Lokesh Portfolio</title>
+    <meta property="og:title" content="Portfolio Page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="static/portfolio/Images/favicon.ico" type="image/x-icon">
+
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: transparent;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        button,
+        [type="button"],
+        [type="reset"],
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        button:-moz-focus,
+        [type="button"]:-moz-focus,
+        [type="reset"]:-moz-focus,
+        [type="submit"]:-moz-focus {
+            outline: 1px dotted ButtonText;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Arial;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.55;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+            fill: var(--dl-color-gray-black);
+        }
+
+        @keyframes waveAnimation {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            20%,
+            60% {
+                transform: rotate(-20deg);
+            }
+
+            40%,
+            80% {
+                transform: rotate(20deg);
+            }
+        }
+
+        #wavingHand {
+            display: inline-block;
+            animation: waveAnimation 2s infinite;
+            font-size: 48px;
+        }
+    </style>
+    <style>
+        .modal {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'portfolio/welcomePage.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ANALYTICS_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'YOUR_ANALYTICS_TRACKING_ID');
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="home-container">
+            <div data-role="Header" class="home-navbar-container">
+                <div class="home-navbar">
+                    <span>
+                        <a href="/">
+                            <img src="{% static 'portfolio/Images/lokesh1.png' %}" alt="My Site Logo"
+                                style="height: 12vh; width: 20vh;">
+                        </a>
+                    </span>
+                    <div class="home-links-container">
+                        <a href="#about" class="home-link Navbar-Link">About</a>
+                        <a href="#work" class="home-link01 Navbar-Link">Work Experience</a>
+                        <a href="#skills" class="home-link02 Navbar-Link">Skills</a>
+                        <a href="#education" class="home-link03 Navbar-Link">Education</a>
+                        <a href="#contact" class="home-link04 Navbar-Link">Contact</a>
+                        <a href="/blog" class="home-link04 Navbar-Link">Blog</a>
+                        <a href="https://www.linkedin.com/in/yama-bondili-lokesh/" class="Navbar-Link">LinkedIn</a>
+                    </div>
+                    <div data-role="BurgerMenu" class="home-burger-menu">
+                        <svg viewBox="0 0 1024 1024" class="home-icon">
+                            <path d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div data-role="MobileMenu" class="home-mobile-menu ">
+                        <div class="home-container01">
+                            <span>
+                                <a href="/">
+                                    <img src="{% static 'portfolio/Images/lokesh1.png' %}" alt="My Site Logo"
+                                        style="height: 12vh; width: 20vh;">
+                                </a>
+                            </span>
+                            <div data-role="CloseMobileMenu" class="home-close-menu">
+                                <svg viewBox="0 0 1024 1024" class="home-icon02">
+                                    <path
+                                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                                        style="fill: #fefefe;">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="home-links-container1">
+                            <a href="#about" class="home-link Navbar-Link">About</a>
+                            <a href="#work" class="home-link07 Navbar-Link">Work Experience</a>
+                            <a href="#skills" class="home-link08 Navbar-Link">Skills</a>
+                            <a href="#education" class="home-link09 Navbar-Link">Education</a>
+                            <a href="#contact" class="home-link11 Navbar-Link">Contact</a>
+                            <a href="/blog" class="home-link11 Navbar-Link">Blog</a>
+                            <a href="https://www.linkedin.com/in/yama-bondili-lokesh/" class="Navbar-Link">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-section-separator"></div>
+            <div class="home-section-separator1"></div>
+            <div class="home-container02" id="about" style="scroll-margin-top: 150px;">
+                <div class="home-hero">
+                    <div class="home-hero-text-container">
+                        <h1 class="home-heading2 Section-Heading">
+                            <div id="wavingHand">👋</div>
+                            <span style="color:#fefefe; font-style: italic;" class="home-heading">
+                                Hi, I am Yama Bondili Lokesh
+                            </span>
+                        </h1>
+                        <span class="home-heading22">
+                            I'm a
+                        </span>
+                        <div id="typing" class="typing"></div>
+                        <span class="home-text Section-Text">
+                            <span class="written_text" style="color:#d6d6d6; font-family: 'Poppins', sans-serif;">
+                                My Skills are flexible as a Django & React Full Stack Developer, Data Scientist, Data
+                                Engineer, Data Analyst and Database Architect.
+                            </span>
+                            <br>
+                            <br>
+                            <div style="text-decoration: underline; text-underline-offset: 5px;">
+                                My Key Skills Include:
+                            </div>
+                            <ul>
+                                <li class="six">
+                                    As a Full stack Developer Python, Django, JavaScript, React, HTML, CSS5 and GIT.
+                                </li>
+                                <li class="six">
+                                    As a Data Engineer Apache Spark, Apache Hadoop, Azure Data Warehouse, Azure Data
+                                    Lake, Power BI, Tableau.
+                                </li>
+                                <li class="six">
+                                    As a Data Analyst Statistics, Python for Data Cleaning and Analysis, Azure
+                                    Databricks, snowflake, Microsoft Excel.
+                                </li>
+                                <li class="six">
+                                    As a Data Scientist A/B testing, R for Data Analysis, Image Processing with
+                                    Python, Machine Learning and Time Series analysis.
+                                </li>
+                                <li class="six">
+                                    As a Database Architect RDBMS (MS SQL, Postgres SQL, MY SQL).
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                    <img alt="image" src="static/portfolio/Images/Web_Photo_Editor.jpg" class="home-image" />
+                </div>
+                <script src="static/portfolio/textstyle.js"></script>
+            </div>
+            <div class="home-section-separator5"></div>
+            <div class="home-container03 ">
+                <div class="home-features" id="work" style="scroll-margin-top: 150px;">
+                    <div class="home-heading-container">
+                        <h2 class="home-text03 Section-Heading">Work Experience</h2>
+                    </div>
+                    <div class="home-cards-container">
+                        <div class="home-card">
+                            <div class="home-icon-container">
+                                <img class="company-logo" src="static/portfolio/Images/nttdata_logo.jpg"
+                                    alt="My Site Logo" style="width: 15vw;">
+                            </div>
+                            <div class="home-content-container">
+                                <span class="home-heading4 Card-Heading"
+                                    style="color: #0664cf; font-family: 'Poppins', sans-serif;">NTT DATA - Info
+                                    Technology Sr. Associate</span>
+                                <span class="home-heading4 Card-Heading"
+                                    style="color: #21b513; font-family: 'Poppins', sans-serif;"> -- Aug 2021 - Jan 2023
+                                </span>
+                                <span class="home-text05 Card-Text" style="text-align: justify;">
+                                    <span>
+                                        Backend Web Services Development: Designed and implemented robust backend
+                                        services using C# and .NET, enhancing
+                                        application functionality and user experience.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Database Administration: Served as a Database Administrator, leveraging SQL to
+                                        create and optimize Functions, Views, and Stored Procedures in Microsoft SQL
+                                        Server, ensuring efficient data management and accessibility.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Front-end Development: Engineered responsive front-end interfaces, remediated
+                                        issues in existing interfaces, and introduced new features to ensure optimal
+                                        functionality across multiple browsers using ReactJS, HTML, and CSS. Specialized
+                                        in designing MAVEN interfaces, enhancing user interactions and visual design.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Database Design and Management: Skillfully designed and modified database
+                                        schemas,
+                                        conducted data migrations, and implemented data backup and recovery strategies
+                                        to maintain data integrity and availability.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Project Management and Collaboration: Managed critical, time-sensitive updates
+                                        and code deployments, utilizing Team Foundation Server (TFS) for source code
+                                        management, change tracking, and collaborative project execution.
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="home-card1">
+                            <div class="home-icon-container1">
+                                <img class="company-logo" src="static/portfolio/Images/sensovision_logo.jpeg"
+                                    alt="My Site Logo" style="width: 15vw;">
+                            </div>
+                            <div class="home-content-container1">
+                                <span class="home-heading4 Card-Heading"
+                                    style="color: #0664cf; font-family: 'Poppins', sans-serif;">Senso Vision -
+                                    Full
+                                    Stack Developer</span>
+                                <span class="home-heading4 Card-Heading"
+                                    style="color: #21b513; font-family: 'Poppins', sans-serif;"> -- Feb 2023 - Aug 2023
+                                </span>
+                                <span class="home-text05 Card-Text" style="text-align: justify;">
+                                    <span>
+                                        Full-Stack Development Expertise: Architected efficient backend solutions with
+                                        Python and Django, complemented by dynamic front-end interfaces using React and
+                                        PostgreSQL for database management.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        API and Endpoint Management: Designed and managed RESTful API endpoints,
+                                        optimizing HTTP request handling for secure and reliable client-server data
+                                        exchanges.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Web Application Engineering: Developed secure, reliable web applications using
+                                        Django and REST APIs, enhancing functionality and performance.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        User Interface Design: Built engaging, user-friendly interfaces with Django’s
+                                        template system, enhancing user experience.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Advanced Django and React Skills: Leveraged Django signals, RabbitMQ queues, and
+                                        React components like JSX, Virtual DOM, lifecycle methods, Redux or Context API
+                                        for state management, and React Router for navigation.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Modern Development Practices: Skilled in using Git for version control, npm for
+                                        package management, and Webpack/Babel for efficient build processes.
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="home-card2">
+                            <div class="home-icon-container2">
+                                <img class="company-logo" src="static/portfolio/Images/gbcs_logo.jpeg"
+                                    alt="My Site Logo" style="width: 15vw;">
+                            </div>
+                            <div class="home-content-container2">
+                                <span class="home-heading4 Card-Heading"
+                                    style="color: #0664cf; font-family: 'Poppins', sans-serif;">GBCS Group -
+                                    Backed
+                                    Developer Django Rest</span>
+                                <span class="home-heading4 Card-Heading"
+                                    style="color: #21b513; font-family: 'Poppins', sans-serif;"> -- Jan 2024 - Apr 2024
+                                </span>
+                                <span class="home-text05 Card-Text" style="text-align: justify;">
+                                    <span>
+                                        Backend Development with Django and Docker: Designed scalable backend solutions
+                                        with Django, utilizing Docker for container management and deploying on Azure
+                                        for high availability and resilience.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        API Design and Management: Developed secure, high-performance APIs, managing
+                                        server-database interactions on Azure for optimized data handling and
+                                        scalability.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Cloud Infrastructure and Deployment: Streamlined cloud deployment using Azure
+                                        DevOps for CI/CD and Docker for consistent environment management.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Performance Optimization: Enhanced application speed and scalability with Django
+                                        ORM optimizations and Azure’s scaling capabilities.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Advanced Docker Skills: Skilled in Docker containerization, ensuring a
+                                        consistent, optimized development environment.
+                                    </span>
+                                    <br>
+                                    <br>
+                                    <span>
+                                        Modern Development Practices: Proficient in Git for version control, Azure for
+                                        cloud services, and Docker for streamlined workflows, supporting efficient and
+                                        reliable development.
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-section-separator5"></div>
+            <div class="home-container02" id="skills" style="scroll-margin-top: 150px;">
+                <div class="home-max-content-width-container " style="padding: 0px;">
+                    <div class="home-heading-container1">
+                        <h1 class="Section-Heading home-text08">
+                            Work & Skills
+                        </h1>
+                    </div>
+                    <section id="timeline" style="padding: 0px;">
+                        <div class="timeline">
+                            <canvas id="cvs3"></canvas>
+                            <article>
+                                <h2>Work Experiences</h2>
+                                <figure>
+                                    <figcaption>GBCS Group</figcaption>
+                                    <h6>Backed Developer Django Rest</h6>
+                                    <p>
+                                        I have architected robust backend solutions utilizing Django, enhanced with
+                                        Docker for efficient container management. My work includes designing and
+                                        implementing secure, high-performance APIs. I excel in application performance
+                                        optimization using Django's ORM and Azure's scalability features, ensuring
+                                        maximum speed and scalability. Additionally, I leverage Azure for scalable and
+                                        resilient application deployments, incorporating Azure Pipelines to automate
+                                        builds, tests, and deployments
+                                    </p>
+                                </figure>
+                                <figure>
+                                    <figcaption>Sensovision</figcaption>
+                                    <h6>Python Django Full stack </h6>
+                                    <p>
+                                        I have designed two websites and one project: QualViz Deep Learning (DL) Cloud,
+                                        QualViz PDIR, and Vizbot. In QualViz DL Cloud, I developed a platform designed
+                                        to simplify image dataset preparation and model development, enabling users to
+                                        evaluate their models using test images to predict and assess model accuracy. In
+                                        QualViz PDIR, I integrated a live camera to capture real-time images, allowing
+                                        users to perform real-time object detection and generate detailed image reports.
+                                        In Vizbot, I designed a website for Vizsort mini that facilitates live image
+                                        capture and analysis, classifying parts as valid or invalid based on the image
+                                        parameters.
+                                    </p>
+                                </figure>
+                                <figure>
+                                    <figcaption>NTT DATA</figcaption>
+                                    <h6>Info Technology Sr.Associate </h6>
+                                    <p>
+                                        I have primarily worked with the Computerized Criminal History Record
+                                        Information (CCHRI), vital for various criminal justice and non-criminal justice
+                                        processes. My responsibilities included managing Hostfiles and leveraging
+                                        BizTalk for efficient message communications. I worked on the Frontend to add
+                                        additional features to the present UI Additionally, I served as a
+                                        Database Administrator, overseeing database creation, managing roles, and
+                                        developing specialized stored procedures in response to client requests.
+                                    </p>
+                                </figure>
+                            </article>
+                            <article>
+                                <h2>Skills Gained</h2>
+                                <figure>
+                                    <figcaption>Python Backend & Asure skills</figcaption>
+                                    <h6>Python, Django, Api Development, Asure, Docker, Kubernets </h6>
+                                    <p>
+                                        I have gained expertise in API development by creating responses from the
+                                        Frontend in the Python. I have gained expertise in Docker, and Kubernets by
+                                        managing, running the docker containers and recheduling failed containers. I
+                                        have gained expertise in Asure by
+                                        hosting web applications and APIs with Azure App Servic. Deploy, manage, and
+                                        scale containerized applications using Kubernetes.
+                                </figure>
+                                <figure>
+                                    <figcaption>Django & React Full Satck Skills</figcaption>
+                                    <h6>Python, Django Rest Framework, React, Rest API, HTML5, CSS, Javascript,
+                                        Responsive Web Design, GIT LAB</h6>
+                                    <p>
+                                        I developed responsive web applications from scratch, using Django for the
+                                        backend
+                                        and React for interactive front-end interfaces. I design user-friendly
+                                        tools—such as pencil, eraser, text labeling, and rectangle
+                                        highlighting—enhancing engagement and supporting the creation of training
+                                        datasets for machine learning. Leveraging Python on the backend, I handled data
+                                        transactions securely by validating incoming request parameters and using robust
+                                        RESTful APIs for seamless data exchange. This approach underscores my
+                                        proficiency in using
+                                        advanced web technologies and frameworks to build scalable and dynamic web
+                                        applications.
+                                    </p>
+                                </figure>
+                                <figure>
+                                    <figcaption>.NET Full Stack Skills</figcaption>
+                                    <h6>C#, ASP.NET, .Net Framework, React, Database migration, creation and devloping
+                                        store procedures, Biztalk, Messaging queues</h6>
+                                    <p>
+                                        Working extensively with the .NET framework, I have developed proficiency in
+                                        creating both backend web services and frontend applications. My projects
+                                        frequently involve scrutinizing outlier conditions in databases, enhancing my
+                                        SQL capabilities. As a Database Administrator, I am skilled in constructing new
+                                        databases and restoring tables from backups. Additionally, I have innovated with
+                                        messaging queues to offer robust alternatives to using BizTalk, further
+                                        diversifying my technical expertise and contributing to more efficient system
+                                        architectures.
+                                    </p>
+                                </figure>
+                            </article>
+                            <br style="clear:both" />
+                        </div>
+
+                    </section>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                    <script src="static/portfolio/timeline.js"></script>
+                </div>
+            </div>
+            <div class="home-section-separator2"></div>
+
+            <div class="home-container03 ">
+                <div class="home-pricing" id="education" style="scroll-margin-top: 150px;">
+                    <div class="home-heading-container3">
+                        <h1 class="home-text20 Section-Heading">Education</h1>
+                    </div>
+                    <div class="home-container02">
+                        <div class="reverse-home-hero" style="margin-top: 0px; margin-bottom: 0px;">
+                            <div class="home-hero-text-container">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; font-size: 21px; font-weight: 400; ">
+                                    <span class="home-heading4 Card-Heading" style="color: #0664cf;">MASTERS- UNIVERSITY
+                                        AT BUFFALO</span>
+                                    <span class="home-heading4 Card-Heading"
+                                        style="margin-left: 4vh; color: #21b513;">Aug 2023 - Jan 2025</span>
+                                </div>
+                                <span style="font-size: 17px;">Engineering Science Data Science</span>
+                                <span class="home-text Section-Text" style="margin-top: 2vh;">
+                                    <span>
+                                        I have specialized in designing robust data architectures
+                                        and developing scalable machine learning models. My expertise extends to using
+                                        Python and R for advanced data analysis, predictive modeling, and statistical
+                                        testing. I implement these models on scalable cloud platforms like AWS and
+                                        Azure, ensuring they are optimized for performance and cost-efficiency. I also
+                                        utilize technologies such as Spark for big data processing and TensorFlow for
+                                        deep learning applications. My work includes not only model development but also
+                                        data wrangling, visualization, and making data-driven decisions to drive
+                                        business strategies. Additionally, I am adept at using SQL and NoSQL databases
+                                        to manage and query large datasets effectively, and I use modern data tools like
+                                        Tableau and PowerBI for insightful data reporting and dashboard creation.
+                                    </span>
+                                </span>
+                            </div>
+                            <img alt="image" src="static/portfolio/Images/ub_logo.png" class="education-image" />
+                        </div>
+                        <div class="home-hero" style="margin-top: 0px; margin-bottom: 0px;">
+                            <div class="home-hero-text-container">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; font-size: 21px; font-weight: 400; ">
+                                    <span class="home-heading4 Card-Heading" style="color: #0664cf;">BACHELORS- JAIN
+                                        UNIVERSITY, BANGLORE</span>
+                                    <span class="home-heading4 Card-Heading"
+                                        style="margin-left: 4vh; color: #21b513;">JUN 2017 - JUL 2021</span>
+                                </div>
+                                <span style="font-size: 17px;">Electronics & Communication</span>
+                                <span class="home-text Section-Text" style="margin-top: 2vh;">
+                                    <span>
+                                        My Bachelor’s in Electronics and Communications laid the groundwork for my
+                                        programming and web development journey. Learning C and Assembly languages
+                                        taught me essential programming logic, while hands-on projects like connecting a
+                                        camera to an Arduino board deepened my understanding of embedded systems and
+                                        real-time data processing. This experience enabled me to create dynamic web
+                                        applications that interact with hardware, such as live camera feeds. My
+                                        background in electronics has been invaluable, providing me with a versatile
+                                        skill set that bridges hardware and software, allowing me to explore innovative
+                                        projects at the intersection of electronics, programming, and web design.
+                                    </span>
+                                </span>
+                            </div>
+                            <img alt="image" src="static/portfolio/Images/jain_logo.jpeg" class="education-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home-section-separator5"></div>
+            <div class="home-subscribe" id="contact" style="background-color: black;">
+                <div class="home-container17">
+                    <div class="home-heading-container4">
+                        <span class="home-text39 Section-Heading" style="white-space: nowrap;">
+                            To Get in Touch, Contact Me Here
+                        </span>
+                        <h4 class="written_text"
+                            style="font-size: 20px; font-family: 'Poppins', sans-serif; color: #d6d6d6;">Y.B. Lokesh
+                        </h4>
+                        <h4 class="written_text"
+                            style="font-size: 20px; font-family: 'Poppins', sans-serif; color: #d6d6d6;">Django-React
+                            Full Stack Developer/ Data scientist/ Data Analyst</h4>
+                        <h4 class="written_text"
+                            style="font-size: 20px; font-family: 'Poppins', sans-serif; color: #d6d6d6;">
+                            lokeshyama09@gmail.com</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-footer-container" style="background-color: #212121;">
+                <div class="home-footer">
+                    <div class="home-social-links">
+                        <a href="https://www.linkedin.com/in/yama-bondili-lokesh/" target="_blank">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px" class="home-icon22">
+                                <path fill="#0077B5"
+                                    d="M20.45,20.45h-3.49V14.89c0-1.33,0-3.03-1.85-3.03s-2.13,1.44-2.13,2.93v5.66H9.5V9H12.8v1.56h0.04c0.46-0.87,1.58-1.78,3.26-1.78c3.49,0,4.14,2.3,4.14,5.28v6.39H20.45z M5.34,7.51c-1.12,0-2.03-0.91-2.03-2.03s0.91-2.03,2.03-2.03s2.03,0.91,2.03,2.03S6.46,7.51,5.34,7.51z M7.12,20.45H3.62V9h3.49V20.45z">
+                                </path>
+                            </svg>
+                        </a>
+
+                        <a href="mailto:lokeshyama09@@gmail.com" target="_blank">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px" class="home-icon22">
+                                <path fill="#D14836"
+                                    d="M21.5,3H2.5C1.67,3,1,3.67,1,4.5v15c0,0.83,0.67,1.5,1.5,1.5h19c0.83,0,1.5-0.67,1.5-1.5v-15C23,3.67,22.33,3,21.5,3z M21.5,19.5h-19v-15h19V19.5z">
+                                </path>
+                                <polygon fill="#D14836" points="12,13 2.5,6.5 2.5,4.5 12,11 21.5,4.5 21.5,6.5 ">
+                                </polygon>
+                            </svg>
+                        </a>
+
+                        <a href="https://github.com/Lokesh0009" target="_blank">
+                            <svg viewBox="0 0 24 24" width="24px" height="24px" class="home-icon22">
+                                <path fill="#FFFFFF"
+                                    d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385 0.6 0.113 0.82-0.258 0.82-0.577 0-0.285-0.01-1.04-0.015-2.04-3.338 0.724-4.042-1.61-4.042-1.61-0.546-1.385-1.333-1.753-1.333-1.753-1.09-0.745 0.084-0.729 0.084-0.729 1.205 0.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492 0.998 0.108-0.775 0.418-1.305 0.762-1.605-2.665-0.3-5.466-1.332-5.466-5.93 0-1.31 0.468-2.38 1.235-3.22-0.135-0.303-0.54-1.523 0.105-3.176 0 0 1.005-0.322 3.3 1.23 0.96-0.267 1.98-0.399 3-0.405 1.02 0.006 2.04 0.138 3 0.405 2.28-1.552 3.285-1.23 3.285-1.23 0.645 1.653 0.24 2.873 0.105 3.176 0.765 0.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92 0.42 0.36 0.81 1.096 0.81 2.22 0 1.606-0.015 2.896-0.015 3.286 0 0.315 0.21 0.705 0.825 0.585C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                let pageUrls = [];
+                let scrollDepths = [];
+                let timeSpent = [];
+                let startTime = new Date();
+                const urlParams = new URLSearchParams(window.location.search);
+                const utmSource = urlParams.get('utm_source') || 'Web';
+                if (utmSource) {
+                    sessionStorage.setItem('utm_source', utmSource);
+                }
+                const storedUtmSource = sessionStorage.getItem('utm_source');
+
+                function trackPageUrl() {
+                    let currentPageUrl = document.location.pathname;
+
+                    if (currentPageUrl.startsWith('/track_analytics/') || currentPageUrl.startsWith('/media/')) {
+                        return;
+                    }
+
+                    if (currentPageUrl === '/') {
+                        pageUrls.push('welcome page');
+                    } else if (currentPageUrl.includes('/blog/create/new/')) {
+                        pageUrls.push('blog create page');
+                    } else if (currentPageUrl.includes('/blog/details/')) {
+                        pageUrls.push('blog view page');
+                    } else if (currentPageUrl === '/blog') {
+                        pageUrls.push('blog list page');
+                    } else {
+                        pageUrls.push(currentPageUrl);
+                    }
+                }
+
+                let maxScrollDepth = 0;
+                window.addEventListener('scroll', function () {
+                    let scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    if (scrollableHeight > 0) {
+                        let scrollPercent = Math.floor((window.scrollY / scrollableHeight) * 100);
+                        maxScrollDepth = Math.max(maxScrollDepth, scrollPercent);
+                        console.log('Scroll Depth:', maxScrollDepth);
+                    }
+                });
+
+                window.addEventListener('beforeunload', function () {
+                    let endTime = new Date();
+                    let timeSpentOnPage = Math.floor((endTime - startTime) / 1000);
+                    timeSpent.push(timeSpentOnPage);
+                    scrollDepths.push(maxScrollDepth + '%');
+
+                    const data = {
+                        page_urls: pageUrls,
+                        scroll_depth: scrollDepths,
+                        time_spent: timeSpent,
+                        utm_source: storedUtmSource,
+                        country: 'Unknown',
+                        region: 'Unknown'
+                    };
+                    const jsonString = JSON.stringify(data);
+                    const blob = new Blob([jsonString], { type: 'application/json' });
+                    navigator.sendBeacon('/track_analytics/', blob);
+                    pageUrls = [];
+                    scrollDepths = [];
+                    timeSpent = [];
+                });
+
+                function getCookie(name) {
+                    let cookieValue = null;
+                    if (document.cookie && document.cookie !== '') {
+                        const cookies = document.cookie.split(';');
+                        for (let i = 0; i < cookies.length; i++) {
+                            const cookie = cookies[i].trim();
+                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                break;
+                            }
+                        }
+                    }
+                    return cookieValue;
+                }
+                trackPageUrl();
+            });
+        </script>
+</body>
+
+</html>

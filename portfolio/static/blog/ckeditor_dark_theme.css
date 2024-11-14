@@ -1,0 +1,99 @@
+/* Toolbar background */
+.cke_top,
+.cke_bottom {
+    background-color: #333 !important;
+    color: #ddd !important;
+}
+
+/* Content area background and text color */
+.cke_editable {
+    background-color: #1e1e1e !important;
+    color: #ddd !important;
+    caret-color: #ddd !important;
+    padding: 10px !important;
+}
+
+/* Placeholder color (if applicable) */
+.cke_editable::placeholder {
+    color: #777 !important;
+    opacity: 1 !important;
+}
+
+/* Toolbar button icons */
+.cke_button_icon {
+    filter: invert(1) !important;
+}
+
+/* Toolbar dropdowns and labels (like font, size) */
+.cke_combo_inlinelabel,
+.cke_combo_text,
+.cke_button_label {
+    color: #ddd !important;
+}
+
+/* Elements path at the bottom */
+.cke_path_item {
+    color: #ddd !important;
+}
+
+/* Dropdown menus background and text color */
+.cke_panel,
+.cke_panel_list {
+    background-color: #333 !important;
+    color: #ddd !important;
+}
+
+/* Style for selected text in the dropdowns */
+.cke_panel_list .cke_selected {
+    background-color: #555 !important;
+    color: #fff !important;
+}
+
+/* Tooltip background and text color */
+.cke_tooltip {
+    background-color: #222 !important;
+    color: #ddd !important;
+}
+
+/* Style for dialogs (like image and link dialogs) */
+.cke_dialog,
+.cke_dialog_contents {
+    background-color: #2e2e2e !important;
+    color: #ddd !important;
+}
+
+/* Dialog buttons */
+.cke_dialog_footer .cke_dialog_ui_button_ok,
+.cke_dialog_footer .cke_dialog_ui_button_cancel {
+    background-color: #444 !important;
+    color: #ddd !important;
+}
+
+/* Dropdown menu item hover effect */
+.cke_panel_list li:hover {
+    background-color: #444 !important;
+}
+
+/* Ensure text color in the editor content */
+body {
+    color: #ddd !important;
+}
+
+/* Table borders in the content area */
+.cke_editable table,
+.cke_editable table td,
+.cke_editable table th {
+    border: 1px solid #444 !important;
+}
+
+/* Lists in content area */
+.cke_editable ul, 
+.cke_editable ol {
+    color: #ddd !important;
+}
+
+.cke_contents {
+    background-color: #1e1e1e !important;
+    color: #ddd !important;
+    height: 500px!important;
+}

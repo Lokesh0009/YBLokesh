@@ -1,0 +1,38 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+<div class="link" style="align-self: flex-start; margin-left: 13%;">
+    <a href="{% url 'blog_list' %}" style="color: blue; text-decoration: underline;">🔙 Back To Blog</a>
+</div>
+<h1 class="Blog-Section-Heading" style="align-self: flex-start; margin-left: 13%;">
+    <span class="blog-home-heading" style="color:#fefefe; ">Create a New Blog Post</span>
+</h1>
+<form method="post" class="blog-create-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.title }}
+    {{ form.content }}
+    <br>
+    {{ form.image }}
+    <small style="color: #b7b2b2;">Upload the Author Image (optional)</small>
+    <br>
+    {{ form.pdf }}
+    <small style="color: #b7b2b2;">Upload the PDF (optional)</small>
+
+    {{ form.author }}
+    <button type="submit" class="btn btn-primary">Create Post</button>
+</form>
+
+<script>
+    document.getElementById("id_image").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            document.getElementById("image-filename").textContent = `Selected image: ${file.name}`;
+        }
+    });
+    document.getElementById("id_pdf").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            document.getElementById("pdf-filename").textContent = `Selected PDF: ${file.name}`;
+        }
+    });
+</script>
+{% endblock %}

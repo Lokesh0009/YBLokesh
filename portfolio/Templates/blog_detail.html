@@ -1,0 +1,153 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="link" style="align-self: flex-start; margin-left: 0%;">
+    <a href="{% url 'blog_list' %}" style="color: blue; text-decoration: underline;">🔙Back To Blog</a>
+</div>
+<h1 class="Blog-Section-Heading" style="align-self: flex-start; margin-left: 0%;">
+    <span class="blog-home-heading">{{ post.title }}</span>
+</h1>
+<p style="align-self: flex-start; margin-left: 0%;"> Posted On {{ post.published_date }} By {{ post.author }} </p>
+<div class="blog-details">
+
+    <div class="blog-details-content">
+        {{ post.content|safe }}
+    </div>
+
+
+    {% if post.get_pdf_url %}
+    <h3>PDF Preview</h3>
+    <div id="pdf-container"
+        style="position: relative; width: 30vh; height: 45vh; border: 1px solid #ddd; overflow: hidden;">
+        <div id="fullscreen-btn" class="pdf-nav-button"
+            style="position: absolute; top: 25px; right: 5px; cursor: pointer;">
+            ⛶
+        </div>
+        <canvas id="pdf-render" style="width: 100%; height: 100%;"></canvas>
+
+        <div id="pdf-prev" class="pdf-nav-button">&lt;</div>
+        <div id="pdf-next" class="pdf-nav-button">&gt;</div>
+
+        <div id="pdf-pagination">
+            Page <span id="page-num"></span> / <span id="page-count"></span>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; text-align: center;">
+        <a href="{{ post.get_pdf_url }}" class="btn btn-primary" download>Download PDF</a>
+
+    </div>
+    {% endif %}
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in comments %}
+        <li><strong>{{ comment.author }}</strong>: {{ comment.text }}</li>
+        {% empty %}
+        <li>No comments yet. Be the first to comment!</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add a Comment</h3>
+    <form method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+        <ul class="errorlist">
+            {% for field, errors in form.errors.items %}
+            <li><strong>{{ field }}:</strong> {{ errors|join:", " }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {{ form.as_p }}
+        <button type="submit">Post Comment</button>
+    </form>
+
+</div>
+<script>
+    const pdfUrl = "{{ post.get_pdf_url }}";
+    let pdfDoc = null,
+        pageNum = 1,
+        pageIsRendering = false,
+        pageNumIsPending = null;
+
+    const scale = 1.5,
+        canvas = document.getElementById('pdf-render'),
+        ctx = canvas.getContext('2d');
+
+    const renderPage = (num) => {
+        pageIsRendering = true;
+        pdfDoc.getPage(num).then(page => {
+            const viewport = page.getViewport({ scale });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            const renderCtx = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+
+            const renderTask = page.render(renderCtx);
+
+            renderTask.promise.then(() => {
+                pageIsRendering = false;
+
+                if (pageNumIsPending !== null) {
+                    renderPage(pageNumIsPending);
+                    pageNumIsPending = null;
+                }
+            });
+            document.getElementById('page-num').textContent = num;
+        });
+    };
+    const queueRenderPage = (num) => {
+        if (pageIsRendering) {
+            pageNumIsPending = num;
+        } else {
+            renderPage(num);
+        }
+    };
+    const showPrevPage = () => {
+        if (pageNum <= 1) {
+            return;
+        }
+        pageNum--;
+        queueRenderPage(pageNum);
+    };
+    const showNextPage = () => {
+        if (pageNum >= pdfDoc.numPages) {
+            return;
+        }
+        pageNum++;
+        queueRenderPage(pageNum);
+    };
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+
+        document.getElementById('page-count').textContent = pdfDoc.numPages;
+
+        renderPage(pageNum);
+    });
+    document.getElementById('pdf-prev').addEventListener('click', showPrevPage);
+    document.getElementById('pdf-next').addEventListener('click', showNextPage);
+
+</script>
+<script>
+    document.getElementById('fullscreen-btn').addEventListener('click', () => {
+        const pdfContainer = document.getElementById('pdf-container');
+
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            if (pdfContainer.requestFullscreen) {
+                pdfContainer.requestFullscreen();
+            } else if (pdfContainer.mozRequestFullScreen) {
+                pdfContainer.mozRequestFullScreen();
+            } else if (pdfContainer.webkitRequestFullscreen) {
+                pdfContainer.webkitRequestFullscreen();
+            } else if (pdfContainer.msRequestFullscreen) {
+                pdfContainer.msRequestFullscreen();
+            }
+        }
+    });
+</script>
+
+{% endblock %}

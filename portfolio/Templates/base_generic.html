@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Blog</title>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style data-tag="reset-style-sheet">
+        html {
+            line-height: 1.15;
+            scroll-behavior: smooth;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            min-width: 0px;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: visible;
+            scrollbar-width: none;
+            min-width: 0px;
+        }
+
+        * {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+        }
+
+        p,
+        li,
+        ul,
+        pre,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        figure,
+        blockquote,
+        figcaption {
+            margin: 0;
+            padding: 0;
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        input {
+            padding: 2px 4px;
+        }
+
+        img {
+            display: block;
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+    </style>
+    <style data-tag="default-style-sheet">
+        html {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+            text-transform: none;
+            letter-spacing: normal;
+            line-height: 1.55;
+            color: var(--dl-color-gray-black);
+            background-color: var(--dl-color-gray-white);
+            fill: var(--dl-color-gray-black);
+        }
+    </style>
+
+    <link rel="icon" href="{% static 'portfolio/Images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/welcomePage.css' %}">
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <link rel="stylesheet" href="{% static 'blog/ckeditor_dark_theme.css' %}">
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="home-container99" style="font-family: 'Poppins', sans-serif;">
+        <header class="home-navbar-container" data-role="Header" style="margin-bottom: 15vh;">
+            <div class="home-navbar">
+                <span>
+                    <a href="/">
+                        <img src="{% static 'portfolio/Images/lokesh1.png' %}" alt="My Site Logo"
+                            style="height: 12vh; width: 20vh;">
+                    </a>
+                </span>
+                <div class="home-links-container">
+                    <a href="/#about" class="home-link Navbar-Link">About</a>
+                    <a href="/#work" class="home-link01 Navbar-Link">Work Experience</a>
+                    <a href="/#skills" class="home-link02 Navbar-Link">Skills</a>
+                    <a href="/#education" class="home-link03 Navbar-Link">Education</a>
+                    <a href="/#projects" class="home-link04 Navbar-Link">Projects</a>
+                    <a href="/#contact" class="home-link04 Navbar-Link">Contact</a>
+                    <a href="/blog" class="home-link04 Navbar-Link">Blog</a>
+                    <a href="https://www.linkedin.com/in/yama-bondili-lokesh/" class="Navbar-Link">LinkedIn</a>
+                </div>
+                <div data-role="BurgerMenu" class="home-burger-menu">
+                    <svg viewBox="0 0 1024 1024" class="home-icon">
+                        <path d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"></path>
+                    </svg>
+                </div>
+                <div data-role="MobileMenu" class="home-mobile-menu">
+                    <div class="home-container01">
+                        <a href="/">
+                            <img src="{% static 'portfolio/Images/lokesh1.png' %}" alt="My Site Logo"
+                                style="height: 12vh; width: 20vh;">
+                        </a>
+                        <div data-role="CloseMobileMenu" class="home-close-menu">
+                            <svg viewBox="0 0 1024 1024" class="home-icon02">
+                                <path
+                                    d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                                    style="fill: #fefefe;">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="home-links-container1">
+                        <a href="/#about" class="home-link Navbar-Link">About</a>
+                        <a href="/#work" class="home-link07 Navbar-Link">Work Experience</a>
+                        <a href="/#skills" class="home-link08 Navbar-Link">Skills</a>
+                        <a href="/#education" class="home-link09 Navbar-Link">Education</a>
+                        <a href="/#projects" class="home-link10 Navbar-Link">Projects</a>
+                        <a href="/#contact" class="home-link11 Navbar-Link">Contact</a>
+                        <a href="/blog" class="home-link11 Navbar-Link">Blog</a>
+                        <a href="https://www.linkedin.com/in/yama-bondili-lokesh/" class="Navbar-Link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="blog-main-container">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <footer class="home-footer-container">
+            <div class="home-footer">
+                <div class="home-social-links">
+                    <a href="https://www.linkedin.com/in/yama-bondili-lokesh/" target="_blank">
+                        <svg viewBox="0 0 24 24" width="24px" height="24px" class="home-icon22">
+                            <path fill="#0077B5"
+                                d="M20.45,20.45h-3.49V14.89c0-1.33,0-3.03-1.85-3.03s-2.13,1.44-2.13,2.93v5.66H9.5V9H12.8v1.56h0.04c0.46-0.87,1.58-1.78,3.26-1.78c3.49,0,4.14,2.3,4.14,5.28v6.39H20.45z M5.34,7.51c-1.12,0-2.03-0.91-2.03-2.03s0.91-2.03,2.03-2.03s2.03,0.91,2.03,2.03S6.46,7.51,5.34,7.51z M7.12,20.45H3.62V9h3.49V20.45z">
+                            </path>
+                        </svg>
+                    </a>
+
+                    <a href="mailto:lokeshyama09@gmail.com" target="_blank">
+                        <svg viewBox="0 0 24 24" width="24px" height="24px" class="home-icon22">
+                            <path fill="#D14836"
+                                d="M21.5,3H2.5C1.67,3,1,3.67,1,4.5v15c0,0.83,0.67,1.5,1.5,1.5h19c0.83,0,1.5-0.67,1.5-1.5v-15C23,3.67,22.33,3,21.5,3z M21.5,19.5h-19v-15h19V19.5z">
+                            </path>
+                            <polygon fill="#D14836" points="12,13 2.5,6.5 2.5,4.5 12,11 21.5,4.5 21.5,6.5"></polygon>
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/Lokesh0009" target="_blank">
+                        <svg viewBox="0 0 24 24" width="24px" height="24px" class="home-icon22">
+                            <path fill="#FFFFFF"
+                                d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385 0.6 0.113 0.82-0.258 0.82-0.577 0-0.285-0.01-1.04-0.015-2.04-3.338 0.724-4.042-1.61-4.042-1.61-0.546-1.385-1.333-1.753-1.333-1.753-1.09-0.745 0.084-0.729 0.084-0.729 1.205 0.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492 0.998 0.108-0.775 0.418-1.305 0.762-1.605-2.665-0.3-5.466-1.332-5.466-5.93 0-1.31 0.468-2.38 1.235-3.22-0.135-0.303-0.54-1.523 0.105-3.176 0 0 1.005-0.322 3.3 1.23 0.96-0.267 1.98-0.399 3-0.405 1.02 0.006 2.04 0.138 3 0.405 2.28-1.552 3.285-1.23 3.285-1.23 0.645 1.653 0.24 2.873 0.105 3.176 0.765 0.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92 0.42 0.36 0.81 1.096 0.81 2.22 0 1.606-0.015 2.896-0.015 3.286 0 0.315 0.21 0.705 0.825 0.585C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let pageUrls = [];
+            let scrollDepths = [];
+            let timeSpent = [];
+            let startTime = new Date();
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const utmSource = urlParams.get('utm_source') || 'Web';
+            if (utmSource) {
+                sessionStorage.setItem('utm_source', utmSource);
+            }
+            const storedUtmSource = sessionStorage.getItem('utm_source');
+
+            function trackPageUrl() {
+                let currentPageUrl = document.location.pathname;
+
+                if (currentPageUrl.startsWith('/track_analytics/') || currentPageUrl.startsWith('/media/')) {
+                    return;
+                }
+
+                if (currentPageUrl === '/') {
+                    pageUrls.push('welcome page');
+                } else if (currentPageUrl.includes('/blog/create/new/')) {
+                    pageUrls.push('blog create page');
+                } else if (currentPageUrl.includes('/blog/details/')) {
+                    pageUrls.push('blog view page');
+                } else if (currentPageUrl === '/blog') {
+                    pageUrls.push('blog list page');
+                } else {
+                    pageUrls.push(currentPageUrl);
+                }
+            }
+
+            let maxScrollDepth = 0;
+            window.addEventListener('scroll', function () {
+                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                if (scrollableHeight > 0) {
+                    const scrollDepth = Math.floor((window.scrollY / scrollableHeight) * 100);
+                    if (scrollDepth > maxScrollDepth) {
+                        maxScrollDepth = scrollDepth;
+                        console.log('Max Scroll Depth:', maxScrollDepth + '%');
+                    }
+                }
+            });
+
+            window.addEventListener('beforeunload', function () {
+                let endTime = new Date();
+                let timeSpentOnPage = Math.floor((endTime - startTime) / 1000);
+                timeSpent.push(timeSpentOnPage);
+                scrollDepths.push(maxScrollDepth + '%');
+
+                const data = {
+                    page_urls: pageUrls,
+                    scroll_depth: scrollDepths,
+                    time_spent: timeSpent,
+                    utm_source: storedUtmSource,
+                    country: 'Unknown',
+                    region: 'Unknown'
+                };
+                const jsonString = JSON.stringify(data);
+                const blob = new Blob([jsonString], { type: 'application/json' });
+                navigator.sendBeacon('/track_analytics/', blob);
+                pageUrls = [];
+                scrollDepths = [];
+                timeSpent = [];
+            });
+
+            function getCookie(name) {
+                let cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    const cookies = document.cookie.split(';');
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+
+            trackPageUrl();
+        });
+    </script>
+
+</body>
+
+</html>
